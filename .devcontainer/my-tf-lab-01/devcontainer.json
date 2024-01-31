@@ -1,0 +1,49 @@
+{
+  "name": "my-tf-lab-01",
+
+  // keep this synced to the .env file manually. TODO: find a way to keep them synced automatically
+  "workspaceFolder": "/workspace",
+  "dockerComposeFile": [
+    "./docker-compose.yml"
+  ],
+
+  "postStartCommand": "find /workspace/.devcontainer -maxdepth 1 -type d -exec git config --global --add safe.directory '{}' \\;",
+  "service": "my-tf-lab-01",
+  "shutdownAction": "none",
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true,
+        "workbench.colorTheme": "Default Dark Modern"
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "adamibs.terraform-live-graph",
+        "amazonwebservices.aws-toolkit-vscode",
+        "bridgecrew.checkov",
+        "donjayamanne.githis",
+        "dotenv.dotenv-vscode",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode", 
+        "fchieze.terraformer",
+        "hashicorp.hcl",
+        "hashicorp.terraform",
+        "yzhang.markdown-all-in-one",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "necatiarslan.aws-access-vscode-extension",
+        "oderwat.indent-rainbow",
+        "oferkafry.easy-terraform-commands",
+        "sebastianbille.iam-legend",
+        "tfsec.tfsec",
+        "trunk.io",
+        "tylerharris.terraform-link-docs",
+        "vitabletech.snippetmaster",
+        "winebarrel.tfstate-show"
+      ]
+    }
+  }
+}
